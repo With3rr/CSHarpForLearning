@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int n = Convert.ToInt32(Console.ReadLine());
+            
+            for (int i = 0; i < n; i++)
+            {
+
+                Console.WriteLine(Pierwsza(Convert.ToInt32(Console.ReadLine()))); 
+            
+            }
+
+
+            Console.ReadLine();
+            
+        }
+        static string Pierwsza(int x)
+        {
+            if(x==1)
+            {
+                return "NIE";
+            }
+
+            for (int i = 2; i <=x/2; i++)
+            {
+                if(x%i==0 &&x!=2)
+                {
+                    return "NIE";
+                }
+
+            }
+            return "TAK";
+
+        }
+    }
+}
