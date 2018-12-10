@@ -32,10 +32,12 @@ namespace LiczbyPierwsze
                 if (tab[i]%p==0 &&tab[i]!=2)
                 {
                     Console.WriteLine("Nie");
+                    p=0;
                 }
                 else
                 {
                     Console.WriteLine("Tak");
+                    p=0;
                 }
 
             }
