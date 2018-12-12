@@ -80,6 +80,7 @@ namespace ConsoleApp4
                         czy = true;
                     }
                 }
+                p++;
 
             }
             return tablicado;
