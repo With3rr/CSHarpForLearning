@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp10
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] tablica = new int[] { 3, 4, 6, 8,1};
+            foreach (var item in tablica)
+            {
+                Console.Write(item);
+            }
+            Console.WriteLine();
+
+            InsertionSort(tablica);
+
+
+
+            Console.ReadLine();
+        }static void InsertionSort(int[]tab)
+        {
+            for (int i = 1; i <tab.Length; i++)
+            {
+                int obecny = tab[i];
+                int indeks = i;
+                while(indeks>0&&tab[indeks-1]>obecny)
+                {
+                    tab[indeks] = tab[indeks - 1];
+                    indeks--;
+                }
+                tab[indeks] = obecny;
+               
+            }
+            foreach (var item in tab)
+            {
+                Console.Write(item);
+            }
+        }
+    }
+}
