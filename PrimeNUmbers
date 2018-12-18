@@ -23,7 +23,7 @@ namespace LiczbyPierwsze
             {
 
                 int p = 2;
-                while(tab[i]%2!=0 && p<=Math.Sqrt(tab[i]))
+                while(tab[i]%p!=0 && p<=Math.Sqrt(tab[i]))
                 {
 
                     p += 1;
