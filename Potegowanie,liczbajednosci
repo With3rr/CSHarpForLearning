@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp25
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int d;
+            bool czy = int.TryParse(Console.ReadLine(), out d);
+            for (int i = 0; i < d; i++)
+            {
+                string tekst = Console.ReadLine();
+                string[] tab = tekst.Split(' ');
+                int wykkladnik = int.Parse(tab[0]);
+                int potega = int.Parse(tab[1]);
+                int x = Potega(wykkladnik, potega);
+                Console.WriteLine(x%10);
+             
+            }
+
+
+            Console.ReadLine();
+        }
+        static int Potega(int w,int p)
+        {
+            if(p==0)
+            {
+                return 1;
+            }
+            else
+            {
+                return w * Potega(w, p - 1);
+            }
+        }
+    }
+}
