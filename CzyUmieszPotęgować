@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp25
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int d;
+            bool czy = int.TryParse(Console.ReadLine(), out d);
+            for (int i = 0; i < d; i++)
+            {
+                string tekst = Console.ReadLine();
+                string[] tab = tekst.Split(' ');
+                int podstawa = int.Parse(tab[0]);
+                podstawa = podstawa % 10;
+                int wykladnik = int.Parse(tab[1]);
+                if(wykladnik>0)
+                {
+                    if(wykladnik%4==0)
+                    {
+                        wykladnik = 4;
+                    }
+                    else
+                    {
+                        wykladnik = wykladnik % 4;
+                    }
+                   int wynik = podstawa;
+                    for (int j = 1; j < wykladnik; j++)
+                    {
+                        wynik *= podstawa;
+                    }
+                    Console.WriteLine(wynik%10);
+                }
+                
+                else
+                {
+                    Console.WriteLine(1);
+                }
+            
+            }
+
+            Console.ReadLine();
+        }
+     
+    }
+}
