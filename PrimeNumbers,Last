@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int n = Convert.ToInt32(Console.ReadLine());
+            string wynik;
+            string[] tablica = new string[n];
+            for (int i = 0; i < n; i++)
+            {
+
+
+
+                wynik = Pierwsza(Convert.ToInt32(Console.ReadLine())) ? "TAK" : "NIE";
+                tablica[i] = wynik;
+
+            }
+            foreach (var item in tablica)
+            {
+                Console.WriteLine(item);
+
+            }
+            Console.ReadLine();
+        }
+        static bool Pierwsza(int x)
+        {
+            if (x == 1)
+            {
+                return false;
+            }
+
+            for (int i = 2; i <= x / 2; i++)
+            {
+                if (x % 2 == 0 && x != 2)
+                {
+                    return false;
+                }
+
+            }
+            return true;
+
+        }
+    }
+}
