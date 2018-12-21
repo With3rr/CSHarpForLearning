@@ -4,68 +4,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp4
+namespace ConsoleApp32
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.Write("Ile elementów talbicy:");
-            int n = Convert.ToInt32(Console.ReadLine());
-            int[] tab = Losowe(n);
-
-            Console.WriteLine("Nieposortowane");
-            for (int i = 0; i < n; i++)
+            int[] tab = new int[] { 4, 6, 8, 2, 33, 8, 1, 0, 6 };
+            Bubble(tab);
+            foreach (var item in tab)
             {
-                Console.Write(" "+tab[i]);
+                Console.Write(item);
             }
-            tab = BubbleSort(tab);
-            Console.WriteLine();
-
-            Console.WriteLine("Posortowane");
-            
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write(" "+tab[i]);
-
-            }
-
             Console.ReadLine();
-
         }
-        static int[] Losowe(int a)
+        static void Bubble(int []tablica)
         {
-            Random b = new Random();
-            int[] tablica = new int[a];
-            for (int i = 0; i < a; i++)
+            bool prawda=true;
+            
+            int i = 0;
+            while (i<tablica.Length-1&&prawda)
             {
-                tablica[i] = b.Next(1,15);
-            }
-            return tablica;
-
-
-
-        }
-        static int[] BubbleSort(int[] tablicado)
-        {
-            int x;
-            for (int i = 0; i < tablicado.Length - 1; i++)
-            {
-                for (int j = 1; j < tablicado.Length; j++)
+                prawda = false;
+                int x = 0;
+                for (int j = 0; j < tablica.Length-1-i; j++)
                 {
-                    if (tablicado[j - 1] > tablicado[j])
+                    if(tablica[j]>tablica[j+1])
                     {
-                        x = tablicado[j - 1];
-                        tablicado[j - 1] = tablicado[j];
-                        tablicado[j] = x;
+                        x = tablica[j];
+                        tablica[j] = tablica[j + 1];
+                        tablica[j + 1] = x;
+                        prawda = true;
                     }
+
                 }
+                i++;
 
             }
-            return tablicado;
-
-
         }
-        
     }
 }
