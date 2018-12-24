@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp40
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+
+            int c;
+            bool czy = int.TryParse(Console.ReadLine(), out c);
+            for (int i = 0; i < c; i++)
+            {
+                string tekst = Console.ReadLine();
+
+                string wynik = "";
+                int ile = 1, j = 0;
+             
+                while (j < tekst.Length)
+                {
+
+                    char znak = tekst[j];
+                    
+                    ile = 1;
+                    j++;
+
+                    while (j<tekst.Length&&tekst[j]==znak)
+                    {
+                        j++;
+                        ile++;
+
+                    }
+                    if (ile ==1)
+                    {
+                        wynik+= znak.ToString();
+                    }
+                    else if(ile==2)
+                    {
+                        wynik += znak.ToString();
+                        wynik += znak.ToString();
+                    }
+                    else 
+                    {
+                        wynik += znak.ToString() + ile.ToString();
+                    }
+                    
+                    
+
+                }
+                Console.WriteLine(wynik);
+            }
+
+
+
+
+
+            Console.ReadLine();
+        }
+    }
+}
