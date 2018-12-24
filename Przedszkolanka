@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp41
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n;
+            bool czy = int.TryParse(Console.ReadLine(), out n);
+            int a, b;
+            for (int i = 0; i < n; i++)
+            {
+                string liczby = Console.ReadLine();
+                string[] tablica = liczby.Split(' ');
+                a = int.Parse(tablica[0]);
+                b = int.Parse(tablica[1]);
+                int Nwd = NWD(0, a, b);
+                int Nww = NWW(Nwd, a, b);
+                if (a == b)
+                {
+                    Console.WriteLine(a);
+                }
+                else
+                {
+                    Console.WriteLine(Nww);
+                }
+
+
+
+            }
+            Console.ReadLine();
+
+        }
+        static int NWD(int c ,int a,int b)
+        {
+            
+            if(a%b==0)
+            {
+                return b;
+            }
+            else
+            {
+                
+                return NWD(c=a%b,a=b,b=c);
+            }
+            
+        }
+        static int NWW(int Nwd,int a,int b)
+        {
+            return (a * b) / Nwd;
+        }
+            
+
+    }
+}
