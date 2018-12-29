@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp43
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int t;
+            bool czy = int.TryParse(Console.ReadLine(), out t);
+            for (int i = 0; i < t; i++)
+            {
+                string liczby = Console.ReadLine();
+                string[] tab = liczby.Split(' ');
+                int a = int.Parse(tab[0]);
+                int b = int.Parse(tab[1]);
+                
+                Console.WriteLine(NWD(a, b));
+            }
+            Console.ReadLine();
+            
+            
+        }
+        static int NWD(int a,int b)
+        {
+            int c;
+            if(a%b==0)
+            {
+                return b;
+            }
+            else
+            {
+                c = a % b;
+                return NWD(a=b,b=c);
+            }
+
+        }
+        
+    }
+}
