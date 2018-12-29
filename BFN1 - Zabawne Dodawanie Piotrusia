@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp42
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int t;
+            bool czy = int.TryParse(Console.ReadLine(), out t);
+            for (int i = 0; i < t; i++)
+            {
+                string n = (Console.ReadLine());
+                int dodawania = 0;
+                bool czyjest = true ;
+                do
+                {
+                    if(n.Length==1)
+                    {
+                        break;
+                    }
+                    int x = 0;
+                    for (int j = n.Length-1; j >= 0; j--)
+                    {
+                        if (n[j] != n[x])
+                        {
+                            czyjest = false;
+                            break;
+                        }
+                        else
+                        {
+                            czyjest = true;
+                        }
+                        x++;
+
+                    }
+                    if(czyjest==false)
+                    {
+                        dodawania++;
+                   
+                        string nowy="";
+                        for (int k = n.Length-1; k >=0; k--)
+                        {
+                            nowy += n[k];
+                        }
+                        int starawartosc = int.Parse(n);
+                        int nowawartosc = int.Parse(nowy);
+                        int suma = starawartosc + nowawartosc;
+                        n = suma.ToString();
+                       
+                    }
+
+                } while (czyjest==false);
+                Console.WriteLine(n+" "+dodawania);
+               
+
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
