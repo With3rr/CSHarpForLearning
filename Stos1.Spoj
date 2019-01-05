@@ -30,13 +30,13 @@ namespace ConsoleApp50
                             }
                             else
                             {
-                                Console.WriteLine("(:");
+                                Console.WriteLine(":(");
                             }
                         }
                         break;
                     case "-":
                         {
-                            if (i<=10&&i>0)
+                            if (i<=9&&i>0)
                             {
                                 Console.WriteLine(stos[i-1]);
 
@@ -44,7 +44,7 @@ namespace ConsoleApp50
                             }
                             else
                             {
-                                Console.WriteLine("(:");
+                                Console.WriteLine(":(");
                             }
 
                         }
