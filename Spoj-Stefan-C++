@@ -1,0 +1,25 @@
+#include "pch.h"
+#include <iostream>
+int n, suma = 0, max = 0, dochod;
+
+int main()
+{
+	std::cin >> n;
+	for (size_t i = 0; i < n; i++)
+	{
+		std::cin >> dochod;
+		suma = suma + dochod;
+		if (suma > max)
+		{
+			max = suma;
+		}
+		if (suma < 0)
+		{
+			suma = 0;
+		}
+		
+
+	}
+	std::cout << max;
+    
+}
