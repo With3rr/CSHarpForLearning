@@ -1,0 +1,45 @@
+ing System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp54
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] tab = new int[] { 2, 5, 8, 4, 3, 1, 9, 4 };
+            Sortowanie(tab, 0, tab.Length-1);
+            foreach (var item in tab)
+            {
+                Console.WriteLine(item);
+            }
+                Console.ReadLine();
+
+        }static void Sortowanie(int[]tablica,int lewy,int prawy)
+        {
+            int pivot = tablica[(lewy + prawy) / 2];
+            int i, j, z;
+            i = lewy;
+            j = prawy;
+            do
+            {
+                while (tablica[i] < pivot) i++;
+                while (tablica[j] > pivot) j--;
+                if(i<=j)
+                {
+                    z = tablica[i];
+                    tablica[i] = tablica[j];
+                    tablica[j] = z;
+                    i++;
+                    j--;
+
+                }
+            } while (i <= j);
+            if (j > lewy) Sortowanie(tablica, lewy, j);
+            if (i < prawy) Sortowanie(tablica, i, prawy);
+        }
+    }
+}
