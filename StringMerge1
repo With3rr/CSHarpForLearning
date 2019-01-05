@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp57
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           
+            int t = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < t; i++)
+            {
+
+                string[] tab = Console.ReadLine().Split(' ');
+                Console.WriteLine(Cross(tab[0],tab[1]));
+      
+            }
+            Console.ReadLine();
+            
+        }
+        static string Cross(string cz1,string cz2)
+        {
+            int i = cz1.Length;
+            int j = cz2.Length;
+            string razem = "";
+            int k = 0; ;
+            while (i!=0&&j!=0)
+            {
+                razem += cz1[k];
+                razem += cz2[k];
+                k++;
+                i--;
+                j--;
+
+            }
+            return razem;
+           
+            
+
+        }
+    }
+}
