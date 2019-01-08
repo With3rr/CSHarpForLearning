@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp64
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            string tekst;
+            int wynik;
+            for (int i = 0; i < 100; i++)
+            {
+                tekst = Console.ReadLine();
+                string[] tab = tekst.Split(' ');
+                if(tab[0]=="+")
+                {
+                    wynik = int.Parse(tab[1]) + int.Parse(tab[2]);
+                    Console.WriteLine(wynik);
+
+                }
+                else if(tab[0]=="-")
+                {
+                    wynik = int.Parse(tab[1]) - int.Parse(tab[2]);
+                    Console.WriteLine(wynik);
+
+                }
+                else if (tab[0] == "*")
+                {
+                    wynik = int.Parse(tab[1]) * int.Parse(tab[2]);
+                    Console.WriteLine(wynik);
+
+                }
+                else if (tab[0] == "/")
+                {
+                    if(tab[2]=="0")
+                    {
+
+                    }
+                    else
+                    {
+                        wynik = int.Parse(tab[1]) / int.Parse(tab[2]);
+                        Console.WriteLine(wynik);
+                    }
+         
+                }
+                else if (tab[0] == "%")
+                {
+                    wynik = int.Parse(tab[1]) % int.Parse(tab[2]);
+                    Console.WriteLine(wynik);
+
+                }
+
+
+            }
+            Console.ReadLine();
+
+        }
+    }
+}
