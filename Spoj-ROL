@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp67
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int d;
+            string ciag;
+            bool jak = int.TryParse(Console.ReadLine(), out d);
+            for (int i = 0; i < d; i++)
+            {
+                ciag = Console.ReadLine();
+                string[] tab = ciag.Split(' ');
+                string[] tablica = new string[int.Parse(tab[0])];
+                for (int j = 2; j < tab.Length; j++)
+                {
+                    tablica[j - 2] = tab[j];
+                }
+                tablica[int.Parse(tab[0]) - 1] = tab[1];
+                
+                foreach (var item in tablica)
+                {
+                    Console.Write(" "+item);
+                }
+
+            }
+            Console.ReadLine();
+        }
+    }
+}
