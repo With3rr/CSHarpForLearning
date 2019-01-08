@@ -1,0 +1,68 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp65
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string tekst;
+            int i = 0;
+            int[] tablica = new int[10];
+            while((tekst=Console.ReadLine())!=null&&i<100)
+            {
+                string[] tab = tekst.Split(' ');
+                int a = int.Parse(tab[1]);
+                int b = int.Parse(tab[2]);
+
+                i++;
+                switch (tab[0])
+                {
+                    case "+":
+                    {
+                            Console.WriteLine(tablica[a]+tablica[b]);
+
+                    }break;
+                    case "-":
+                        {
+                            Console.WriteLine(tablica[a] - tablica[b]);
+
+                        }
+                        break;
+                    case "*":
+                        {
+                            Console.WriteLine(tablica[a] * tablica[b]);
+
+                        }
+                        break;
+                    case "/":
+                        {
+                            Console.WriteLine(tablica[a] / tablica[b]);
+
+                        }
+                        break;
+                    case "%":
+                        {
+                            Console.WriteLine(tablica[a] % tablica[b]);
+
+                        }
+                        break;
+                    case "z":
+                        {
+                            tablica[a] = b;
+
+
+                        }break;
+
+                }
+
+
+            }
+            Console.ReadLine();
+        }
+    }
+}
