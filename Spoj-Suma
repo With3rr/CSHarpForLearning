@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp66
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string wpis;
+           
+            int suma = 0;
+            while ((wpis=Console.ReadLine())!=null)
+            {
+                suma+=int.Parse(wpis);
+                Console.WriteLine(suma);
+
+            }
+            Console.ReadLine();
+        }
+    }
+}
