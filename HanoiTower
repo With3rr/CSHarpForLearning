@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char firstPeg = 'A'; // pierwsza wieża
+            char lastPeg = 'C'; // ostatnia wieża
+            char tempPeg = 'B'; // wieża środkowa
+            int totalDisks = 3;
+            HanoiTowers(totalDisks, firstPeg, lastPeg, tempPeg);
+
+
+
+            Console.ReadLine();
+
+        }static void HanoiTowers(int totalDisks,char firstPeg, char lastPeg,char  tempPeg)
+        {
+            if(totalDisks>0)
+            {
+                HanoiTowers(totalDisks - 1, firstPeg, tempPeg , lastPeg);
+                Console.WriteLine(firstPeg+" "+ lastPeg);
+                
+                HanoiTowers(totalDisks-1, tempPeg, lastPeg, firstPeg);
+            }
+        }
+        
+
+
+    }
+}
