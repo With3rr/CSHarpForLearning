@@ -1,0 +1,37 @@
+#include <iostream>
+#include <memory>
+using namespace std;
+class A {
+public:
+    int zmienna;
+    A(int s)
+    {
+        zmienna = s;
+
+    }
+    void wypisz()
+    {
+        cout << zmienna;
+    }
+     
+    
+};
+void wypisz(const A& a)
+{
+    cout << a.zmienna;
+}
+
+
+int main()
+{
+
+    unique_ptr<A> wsk(new A(5));
+
+    wypisz(*wsk);
+    wsk.reset();
+    wsk->wypisz();
+
+    
+    
+    
+}
