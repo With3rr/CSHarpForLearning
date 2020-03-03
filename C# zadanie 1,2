@@ -1,0 +1,164 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace WpfApp1
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+        int a = 0;
+        char znak;
+        string napis=" ";
+        private void dodawanie_Click(object sender, RoutedEventArgs e)
+        {
+             a+=Int32.Parse(t2.Text);
+            napis += Int32.Parse(t2.Text);
+            znak= '+';
+            napis += "+";
+            t1.Text = napis;
+             
+        }
+
+        private void odejmowanie_Click(object sender, RoutedEventArgs e)
+        {
+            a -= Int32.Parse(t2.Text);
+            napis += Int32.Parse(t2.Text);
+            znak = '-';
+            napis += "-";
+            t1.Text = napis;
+
+        }
+
+        private void mnozenie_Click(object sender, RoutedEventArgs e)
+        {
+            a *= Int32.Parse(t2.Text);
+            napis += Int32.Parse(t2.Text);
+            napis += "*";
+            znak = '*';
+            t1.Text = napis;
+        }
+
+        private void dzielenie_Click(object sender, RoutedEventArgs e)
+        {
+            a /= Int32.Parse(t2.Text);
+            napis += Int32.Parse(t2.Text);
+            napis += "/";
+            znak = '/';
+            t1.Text = napis;
+        }
+
+        private void wynik_Click(object sender, RoutedEventArgs e)
+        {
+            
+            napis += Int32.Parse(t2.Text);
+            napis += "=";
+            t1.Text = napis;
+            switch (znak)
+            {
+                case '+':
+                    a+= Int32.Parse(t2.Text);
+                    break;
+                case '-':
+                    a -= Int32.Parse(t2.Text);
+                    break;
+                case '*':
+                    a *= Int32.Parse(t2.Text);
+                    break;
+                case '/':
+                    a /= Int32.Parse(t2.Text);
+                    break;
+                default:
+                    break;
+            }
+            t2.Text = a.ToString();
+
+        }
+
+
+        /*private void p1_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int a = Int32.Parse(t1.Text);
+                int b = Int32.Parse(t2.Text);
+                int c = Int32.Parse(t3.Text);
+                int d = a + b + c;
+                twynik.Text = "" + d;
+
+            }
+            catch (Exception t1)
+            {
+                twynik.Text = t1.Message;
+            }
+            
+        }
+        */
+        /*private void p2_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int a = Int32.Parse(t1.Text);
+                int b = Int32.Parse(t2.Text);
+                int c = Int32.Parse(t3.Text);
+                int d = a * b * c;
+                twynik.Text = "" + d;
+
+            }
+            catch (Exception t1)
+            {
+                twynik.Text = t1.Message;
+            }
+            
+        }
+        */
+
+
+
+
+
+
+
+
+        /*private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Etykieta.Content = "Paweł to .... :)";
+            Etykieta2.Content = TextBox.Text;
+        }
+
+        private void Przycisk2_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int a = Int32.Parse(TextBox.Text);
+                int b = a + 5;
+                Etykieta2.Content = "Suma to:" + b;
+
+            }
+            catch (Exception e1)
+            {
+                Etykieta2.Content = e1.Message;
+                
+            }
+            
+        }
+        */
+    }
+}
